@@ -6,7 +6,6 @@ import useSound from "use-sound";
 
 import PopOnSfx from "../assets/sounds/pop-on-sfx.mp3";
 import PopOffSfx from "../assets/sounds/pop-off-sfx.mp3";
-import Stick from "./Stick";
 
 gsap.registerPlugin(useGSAP, Draggable);
 

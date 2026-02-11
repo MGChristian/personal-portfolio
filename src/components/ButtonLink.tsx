@@ -8,7 +8,7 @@ function ButtonLink({ text, onClick, icon }: ButtonLinkProps) {
   const Icon = icon;
   return (
     <button
-      className="flex cursor-pointer flex-col items-center gap-2 rounded-md hover:-translate-y-2"
+      className="flex cursor-pointer flex-col items-center gap-2 rounded-md p-4 hover:-translate-y-2"
       onClick={onClick}
     >
       <Icon className="h-16 w-16" />

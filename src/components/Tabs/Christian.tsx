@@ -8,6 +8,7 @@ import ContactIcon from "../../assets/icons/contact-icon.svg?react";
 import ResumeIcon from "../../assets/icons/resume-icon.svg?react";
 import WorksIcon from "../../assets/icons/works-icon.svg?react";
 import Resume from "./Resume";
+import Contacts from "./Contacts";
 
 function Christian() {
   const [activeTabs, setActiveTabs] = useState<string[]>([]);
@@ -92,6 +93,13 @@ function Christian() {
           onClose={() => toggleTab("works")}
           coordinates={coordinates.works}
           setCoordinates={updateCoordinates("works")}
+        />
+      )}
+      {activeTabs.includes("contacts") && (
+        <Contacts
+          onClose={() => toggleTab("contacts")}
+          coordinates={coordinates.contacts}
+          setCoordinates={updateCoordinates("contacts")}
         />
       )}
     </>

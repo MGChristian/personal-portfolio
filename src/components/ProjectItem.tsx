@@ -1,7 +1,10 @@
 interface ProjectItemProps {
   title: string;
   description: string;
-  image: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   liveLink?: string;
   githubLink?: string;
   technologies?: string[];
@@ -21,8 +24,8 @@ function ProjectItem({
     <div className={`flex gap-4`}>
       <div className="flex h-full flex-1 flex-col items-center justify-center gap-4">
         <img
-          src={image}
-          alt={title}
+          src={image.src}
+          alt={image.alt}
           onClick={onClick}
           className="h-48 rounded-md object-cover brightness-75 duration-150 ease-in-out hover:scale-102 hover:cursor-pointer hover:brightness-90"
         />

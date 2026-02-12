@@ -3,12 +3,21 @@ import ProjectItem from "../ProjectItem";
 import SignBoard from "../SignBoard";
 import { useState } from "react";
 import PhotoViewer from "../PhotoViewer";
-import { development, projects, tools } from "../../constants/works";
+import {
+  development,
+  projects,
+  tools,
+  artworks,
+  posters,
+} from "../../constants/works";
 
 interface WorksProps extends PopUpInterface {}
 
 function Works({ onClose, coordinates, setCoordinates }: WorksProps) {
-  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
   return (
     <>
       {activeImage && (
@@ -51,6 +60,30 @@ function Works({ onClose, coordinates, setCoordinates }: WorksProps) {
                 key={index}
                 {...project}
                 onClick={() => setActiveImage(project.image)}
+              />
+            ))}
+          </div>
+          <p className="text-2xl">Artworks</p>
+          <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
+            {artworks.map((artwork, index) => (
+              <img
+                key={index}
+                src={artwork.image.src}
+                alt={artwork.image.alt}
+                onClick={() => setActiveImage(artwork.image)}
+                className="h-38 w-38 cursor-pointer rounded-md object-cover object-center duration-150 ease-in-out hover:scale-102"
+              />
+            ))}
+          </div>
+          <p className="text-2xl">Graphics</p>
+          <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
+            {posters.map((poster, index) => (
+              <img
+                key={index}
+                src={poster.image.src}
+                alt={poster.image.alt}
+                onClick={() => setActiveImage(poster.image)}
+                className="h-38 w-38 cursor-pointer rounded-md object-cover object-center duration-150 ease-in-out hover:scale-102"
               />
             ))}
           </div>

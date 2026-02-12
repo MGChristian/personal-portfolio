@@ -9,7 +9,10 @@ import useSound from "use-sound";
 gsap.registerPlugin(useGSAP);
 
 interface PhotoViewerProps {
-  image: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   onClose: () => void;
 }
 
@@ -38,15 +41,16 @@ function PhotoViewer({ image, onClose }: PhotoViewerProps) {
       {image &&
         createPortal(
           <div
-            className="fixed top-0 left-0 z-50 flex h-dvh w-dvw items-center justify-center bg-black/60"
+            className="fixed top-0 left-0 z-50 flex h-dvh w-dvw flex-col items-center justify-center gap-4 bg-black/60"
             onClick={onClose}
           >
             <img
               ref={projectPhoto}
-              src={image}
-              alt="Photo"
-              className="max-h-[calc(80vh)] max-w-[calc(80vw)] rounded-lg object-contain"
+              src={image.src}
+              alt={image.alt}
+              className="block max-h-[calc(80vh)] max-w-[calc(80vw)] rounded-lg object-contain"
             />
+            <p className="text-white">{image.alt}</p>
           </div>,
           document.body,
         )}

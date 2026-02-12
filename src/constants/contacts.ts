@@ -25,11 +25,4 @@ export const contacts = [
     className: "hover:text-gray-600 hover:border-gray-600 hover:fill-gray-600",
     icon: GitHub,
   },
-  {
-    name: "Facebook",
-    value: "facebook.com/Christian.Gutierrez.1211",
-    href: "https://www.facebook.com/Christian.Gutierrez.1211/",
-    className: "hover:text-blue-600 hover:border-blue-600 hover:fill-blue-600",
-    icon: Facebook,
-  },
 ];

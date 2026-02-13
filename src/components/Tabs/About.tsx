@@ -9,7 +9,8 @@ function About({ onClose, coordinates, setCoordinates }: AboutProps) {
   return (
     <SignBoard
       title="about.txt"
-      className="h-136 w-3xl overflow-y-scroll"
+      width="w-full md:w-3xl"
+      height="h-full md:h-136"
       onClose={onClose}
       coordinates={coordinates}
       setCoordinates={setCoordinates}

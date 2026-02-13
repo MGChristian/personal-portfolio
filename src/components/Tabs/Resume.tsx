@@ -19,7 +19,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-const maxWidth = 1000;
+const maxWidth = 1028;
 
 function Resume({ onClose, coordinates, setCoordinates }: ResumeProps) {
   const [loading, setLoading] = useState(true);
@@ -54,7 +54,8 @@ function Resume({ onClose, coordinates, setCoordinates }: ResumeProps) {
   return (
     <SignBoard
       title="resume.pdf"
-      className="h-148 w-4xl overflow-x-hidden overflow-y-auto"
+      width="w-4xl"
+      height="h-148"
       onClose={onClose}
       coordinates={coordinates}
       setCoordinates={setCoordinates}
@@ -76,7 +77,11 @@ function Resume({ onClose, coordinates, setCoordinates }: ResumeProps) {
             Download
           </a>
         )}
-        <Document file={myResume} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document
+          file={myResume}
+          onLoadSuccess={onDocumentLoadSuccess}
+          className={"mx-auto"}
+        >
           <Page
             pageNumber={1}
             width={

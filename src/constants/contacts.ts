@@ -1,7 +1,6 @@
 import Email from "../assets/icons/envelope.svg?react";
 import LinkedIn from "../assets/icons/linkedin.svg?react";
 import GitHub from "../assets/icons/github.svg?react";
-import Facebook from "../assets/icons/facebook.svg?react";
 
 export const contacts = [
   {

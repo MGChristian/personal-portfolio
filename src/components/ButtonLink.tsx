@@ -11,7 +11,7 @@ function ButtonLink({ text, onClick, icon }: ButtonLinkProps) {
       className="flex cursor-pointer flex-col items-center gap-2 rounded-md p-4 hover:-translate-y-2"
       onClick={onClick}
     >
-      <Icon className="h-16 w-16" />
+      <Icon className="h-12 w-12 md:h-16 md:w-16" />
       <p className="text-center">{text}</p>
     </button>
   );

@@ -9,14 +9,17 @@ import ResumeIcon from "../../assets/icons/resume-icon.svg?react";
 import WorksIcon from "../../assets/icons/works-icon.svg?react";
 import Resume from "./Resume";
 import Contacts from "./Contacts";
+import { useMediaQuery } from "react-responsive";
 
 function Christian() {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [activeTabs, setActiveTabs] = useState<string[]>([]);
   const [coordinates, setCoordinates] = useState({
-    about: { x: -60, y: 40 },
-    works: { x: -60, y: 40 },
-    resume: { x: -20, y: 20 },
-    contacts: { x: 0, y: 0 },
+    main: { x: 0, y: 0 },
+    about: { x: isMobile ? 0 : 60, y: isMobile ? 0 : 40 },
+    works: { x: isMobile ? 0 : -60, y: isMobile ? 0 : 40 },
+    resume: { x: isMobile ? 0 : -20, y: isMobile ? 0 : 20 },
+    contacts: { x: isMobile ? 0 : 0, y: isMobile ? 0 : 0 },
   });
 
   function toggleTab(tab: string) {
@@ -37,20 +40,23 @@ function Christian() {
     <>
       <SignBoard
         title="christian.exe"
-        className="h-112 w-2xl"
+        width="w-full md:w-2xl"
+        height="h-full md:h-112"
         isDraggable={false}
         isPopup={false}
+        coordinates={coordinates.main}
+        setCoordinates={updateCoordinates("main")}
       >
         <div className="flex h-full flex-col p-4">
           <div className="flex flex-1 flex-col items-center justify-center gap-4 p-4">
-            <h1 className="rounded-md text-center text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="rounded-md text-center text-4xl md:text-7xl">
               yo!, i'm <span className="text-rose-500">chris</span>
             </h1>
-            <p className="rounded-md bg-gray-200 px-4 py-2 text-lg md:text-xl lg:text-2xl">
+            <p className="rounded-md bg-gray-200 px-4 py-2 md:text-2xl">
               a passionate web developer
             </p>
           </div>
-          <div className="grid h-fit grid-cols-2 justify-between gap-4 p-4 md:grid-cols-4">
+          <div className="grid h-fit grid-cols-2 justify-between gap-4 py-4 md:grid-cols-4">
             <ButtonLink
               icon={AboutIcon}
               text="about"

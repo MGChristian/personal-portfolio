@@ -10,7 +10,7 @@ function Contacts({ onClose, coordinates, setCoordinates }: ContactsProps) {
     <SignBoard
       title="contacts.txt"
       onClose={onClose}
-      className="w-xl"
+      width="w-xl"
       coordinates={coordinates}
       setCoordinates={setCoordinates}
     >

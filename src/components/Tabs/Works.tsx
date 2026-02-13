@@ -25,7 +25,8 @@ function Works({ onClose, coordinates, setCoordinates }: WorksProps) {
       )}
       <SignBoard
         title="works.txt"
-        className="h-148 w-3xl overflow-y-scroll"
+        width="w-3xl"
+        height="h-148"
         onClose={onClose}
         coordinates={coordinates}
         setCoordinates={setCoordinates}
@@ -64,7 +65,7 @@ function Works({ onClose, coordinates, setCoordinates }: WorksProps) {
             ))}
           </div>
           <p className="text-2xl">Artworks</p>
-          <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-3 items-center justify-center gap-4 md:grid-cols-4">
             {artworks.map((artwork, index) => (
               <img
                 key={index}
@@ -76,7 +77,7 @@ function Works({ onClose, coordinates, setCoordinates }: WorksProps) {
             ))}
           </div>
           <p className="text-2xl">Graphics</p>
-          <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-3 items-center justify-center gap-4 md:grid-cols-4">
             {posters.map((poster, index) => (
               <img
                 key={index}
